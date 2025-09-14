@@ -1,0 +1,697 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Fundo */
+body {
+  background: #043d2c;
+  color: #f3eeee;
+  line-height: 1.6;
+}
+
+/* Impede scroll lateral em telas menores */
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background: rgba(2, 91, 59, 0.9);
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.header {
+  animation: fadeDown 0.5s ease forwards;
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.scroll-indicator {
+  position: relative;
+  top: 17.5vh;
+  color: #07c46c;
+  font-size: 2rem !important;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ffffff;
+  font-size: 2.5em;
+}
+
+.logo img {
+  width: 150px;
+  position: relative;
+  left: 35px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.nav a {
+  margin: 0 10px;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: #f3eeee;
+  font-weight: 500;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-block;
+    margin: 0 15px;
+  letter-spacing: 0.5px; 
+}
+
+.nav a:hover {
+  transform: scale(1.1);
+  color: #aaffaa;
+} 
+.nav a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: #00c76f;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown container */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Conteúdo do dropdown escondido */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #014426;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  z-index: 1;
+}
+
+/* Links dentro do dropdown */
+.dropdown-content a {
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 0.95rem;
+  transition: background 0.3s ease;
+}
+
+.dropdown-content a:hover {
+  color: #fff;
+  background-color: #00c76d81;
+}
+
+/* Mostrar dropdown no hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Ajuste para o item principal “Lojas” */
+.dropdown > a {
+  cursor: pointer;
+}
+
+
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 12rem 2rem;
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("pexels-jose-martin-segura-benites-1422456152-27008327.jpg") no-repeat center/cover;
+}
+.hero h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+}
+.hero p {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: linear-gradient(135deg, #00a859, #00c76f);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+
+.hero p {
+  margin-bottom: 3rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 1rem 3rem;
+  background: #00a859;
+  font-size: 1.3rem;
+  color: #f3eeee;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition:0.3s ease;
+}
+
+.btn:hover {
+  scale: 1.04;
+  background: #00c76f;
+}
+/*slide*/
+.meio {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 50px;
+  padding: 8rem 2rem;
+  background: #1d664e;
+}
+
+/* Caixa para imagem */
+.image-box {
+  width: 550px;
+  height: 300px;
+  background: #c1cfc9;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Link cobre a imagem inteira */
+.play-overlay {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.play-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Botão de play centralizado */
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  color: rgb(227, 235, 229);
+  background: rgba(5, 70, 34, 0.788);
+  border-radius: 50%;
+  padding: 10px 28px;
+  transition: all 0.3s ease;
+  pointer-events: none; /* clique passa pelo ícone e pega o <a> */
+}
+
+/* Efeito hover */
+.play-overlay:hover .play-button {
+  background: rgba(4, 44, 22, 0.808);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* Texto */
+.infor {
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.infor h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.infor h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* Produtos */
+.produtos {
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.produtos h2 {
+  color: #fcf9f9;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.card {
+  background: #f3eeee;
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+
+.card button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  background: #00a859;
+  color: #f3eeee;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.card button:hover {
+  background: #00c76f;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* Sobre */
+.sobre {
+  padding: 6rem 8%;
+  background: #f2f9f6; /* fundo claro que quebra do verde escuro */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* Texto */
+.sobre .texto {
+  flex: 1;
+  max-width: 600px;
+}
+
+.sobre h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 2rem;
+}
+
+.sobre p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #1a1818;
+  margin-bottom: 1.5rem;
+}
+
+.sobre .slogan {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+
+/* Destaques */
+.verde {
+  color: #01d85a; /* verde da identidade visual */
+}
+
+.negrito {
+  font-weight: 700;
+}
+
+/* Foto circular */
+.sobre .foto {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.sobre .foto img {
+  width: 320px;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  transition: transform 0.4s ease;
+}
+
+.sobre .foto img:hover {
+  transform: scale(1.05);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .sobre {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .sobre .texto {
+    max-width: 100%;
+  }
+
+  .sobre h2 {
+    font-size: 2rem;
+  }
+
+  .sobre .foto img {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+/* Footer */
+.footer {
+  color: #f3f3f3;
+  text-align: center;
+  padding: 0.1rem 1.5rem 1.5rem;
+  font-size: 0.95rem;
+  margin-top: 3rem;
+}
+.footer-top img{
+  width: 160px;
+  height: 100px;
+}
+.footer-top h3 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-top p {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  color: #d1d1d1;
+}
+
+.footer .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.footer .social-links a {
+  color: #f3f3f3; /* branco padrão */
+  font-size: 1.6rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  transform: scale(1.2);
+  color: #00c76f; /* verde da marca ao passar o mouse */
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.2);
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+.verde-2 {
+  color: #00ff4c;
+}
+
+
+
+/* Hero específico das lojas */
+.hero-lojas {
+  text-align: center;
+  padding: 6rem 2rem 3rem;
+}
+
+.hero-lojas h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #f7f2f2;
+}
+
+.hero-lojas p {
+  font-size: 1.2rem;
+  color: #f1eaea;
+}
+
+/* Grid de lojas */
+.lojas {
+  padding: 4rem 8%;
+}
+
+.grid-lojas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  gap: 2rem;
+}
+
+
+/* Card da loja */
+.loja-card {
+  background: #ffffff;
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.loja-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+.loja-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  color: #028c5a;
+}
+
+.loja-card p {
+  font-size: 1rem;
+  margin-bottom: 1.2rem;
+  color: #444;
+}
+
+/* Botão WhatsApp */
+.btn-loja {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background: #25d366;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-loja:hover {
+  background: #20b954;
+  transform: scale(1.05);
+}
+
+.btn-loja i {
+  margin-right: 8px;
+}
+
+/* --- Menu hamburguer --- */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Menu padrão desktop */
+.nav {
+  display: flex;
+  gap: 20px;
+}
+/* Botão Voltar ao Topo */
+#btnTop {
+  display: none; /* escondido por padrão */
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 999;
+  font-size: 1.4rem;
+  border: none;
+  outline: none;
+  background: #00a859; /* verde da marca */
+  color: #fff;
+  cursor: pointer;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+#btnTop:hover {
+  background: #00c76f; /* tom mais claro ao passar mouse */
+  transform: scale(1.1);
+}
+
+/* Mobile */
+@media (max-width: 822px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    background: #025b3b;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+    display: none;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  }
+
+  .nav a {
+    padding: 10px 0;
+    width: 100%;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+  .grid-lojas {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* exatamente 3 colunas */
+  gap: 2rem;
+}
+}
+/* --- Responsividade para telas muito pequenas (até 480px) --- */
+@media (max-width: 480px) {
+  html, body {
+    overflow-x: hidden; /* bloqueia arrastar pro lado */
+  }
+
+  .header h1{
+    font-size: 3rem;
+  }
+
+  .logo img {
+    width: 100px;  /* diminui a logo */
+    left: 0;       /* remove deslocamento fixo */
+  }
+
+  .hero {
+    padding: 6rem 1rem; /* reduz altura e padding */
+  }
+  .hero h2 {
+    font-size: 1.8rem;  /* texto menor */
+  }
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .meio {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem 1rem;
+  }
+
+  .image-box {
+    width: 100%;       /* ocupa largura disponível */
+    max-width: 350px;  /* limite pra não estourar */
+    height: auto;      /* ajusta altura automaticamente */
+  }
+
+  .infor h1 {
+    font-size: 1.5rem;
+  }
+  .infor h2 {
+    font-size: 1rem;
+  }
+
+  .sobre {
+    padding: 3rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .sobre h2 {
+    font-size: 1.8rem;
+  }
+
+  .sobre p {
+    font-size: 1rem;
+  }
+
+  .sobre .foto img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .footer-top h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-top p {
+    font-size: 1rem;
+  }
+}
+
+

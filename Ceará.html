@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>éconis - Lojas Ceará</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="style-1.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="header">
+    <div class="logo">
+      <img src="logo-removebg-preview.png" alt="econis">
+      <h1>éconis</h1>
+    </div>
+    <!-- Botão menu hamburguer -->
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+    <nav class="nav" id="nav-menu">
+      <a href="index.html">Início</a>
+      <div class="dropdown">
+        <a href="#">Lojas ▾</a>
+        <div class="dropdown-content">
+          <a href="Alagoas.html">Alagoas</a>
+          <a href="Bahia.html">Bahia</a>
+          <a href="Ceara.html">Ceará</a>
+          <a href="Paraiba.html">Paraíba</a>
+          <a href="Pernambuco.html">Pernambuco</a>
+        </div>
+      </div>
+      <a href="https://api.whatsapp.com/send/?phone=5575988813421&text&type=phone_number&app_absent=0" target="_blank">Contato</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero-lojas" style="background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.7)), url('ceara-free.jpg') no-repeat center/cover;">
+    <h2>Lojas Éconis no <span class="verde">Ceará</span></h2>
+    <p>Escolha a unidade mais próxima e fale direto pelo <span class="verde">WhatsApp</span>.</p>
+  </section>
+ <!-- Botão Voltar ao Topo -->
+<button id="btnTop" title="Voltar ao topo">
+  <i class="fa fa-arrow-up"></i>
+</button>
+  <!-- Lista de Lojas -->
+  <section class="lojas">
+    <div class="grid-lojas">
+
+      <div class="loja-card">
+        <h3>Brejo Santo</h3>
+        <p>Rua Napoleão de Araújo Lima, 242 - Centro</p>
+        <a href="https://api.whatsapp.com/message/YERXH7YH5AE3A1?autoload=1&app_absent=0  " target="_blank" class="btn-loja"><i class="fa fa-whatsapp"></i> Falar no WhatsApp</a>
+      </div>
+
+      <div class="loja-card">
+        <h3>Crato</h3>
+        <p>Rua Dr. João Pessoa, 300 - Centro</p>
+        <a href="https://api.whatsapp.com/message/5YBRLE2X6WOUO1?autoload=1&app_absent=0" target="_blank" class="btn-loja"><i class="fa fa-whatsapp"></i> Falar no WhatsApp</a>
+      </div>
+
+      <div class="loja-card">
+        <h3>Juazeiro do Norte</h3>
+        <p>Rua São Pedro, 494 - Centro</p>
+        <a href="https://api.whatsapp.com/send/?phone=7530319550&text&type=phone_number&app_absent=0" target="_blank" class="btn-loja"><i class="fa fa-whatsapp"></i> Falar no WhatsApp</a>
+      </div>
+
+    </div>
+  </section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <img src="logo-removebg-preview.png" alt="logo-econis">
+    <h3>Venha ser <span class="verde-2">Éconis</span>!</h3>
+    <p>Conforto, estilo e exclusividade em cada passo.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/econis" target="_blank">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=5575988813421&text&type=phone_number&app_absent=0" target="_blank">
+        <i class="fa fa-whatsapp"></i>
+      </a>
+      <a href="https://econis.vagas.solides.com.br/" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 <span class="verde">Éconis</span> - Todos os direitos reservados</p>
+  </div>
+</footer>
+
+</body>
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
+<script>
+  const btnTop = document.getElementById("btnTop");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btnTop.style.display = "block";
+    } else {
+      btnTop.style.display = "none";
+    }
+  };
+
+  btnTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</html>

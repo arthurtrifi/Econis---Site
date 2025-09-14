@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>éconis - Loja de Calçados</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="header">
+  <div class="logo">
+    <img src="logo-removebg-preview.png" alt="econis">
+    <h1>éconis</h1>
+  </div>
+
+    <!-- Botão menu hamburguer -->
+  <div class="menu-toggle" id="menu-toggle">
+    ☰
+  </div>
+  
+  <nav class="nav" id="nav-menu">
+    <a href="index.html">Início</a>
+    <div class="dropdown">
+      <a href="#">Lojas ▾</a>
+      <div class="dropdown-content">
+        <a href="Alagoas.html">Alagoas</a>
+        <a href="Bahia.html">Bahia</a>
+        <a href="Ceara.html">Ceará</a>
+        <a href="Paraiba.html">Paraíba</a>
+        <a href="Pernambuco.html">Pernambuco</a>
+      </div>
+    </div>
+
+    <a href="#sobre">Sobre</a>
+    <a href="https://api.whatsapp.com/send/?phone=5575988813421&text&type=phone_number&app_absent=0" target="_blank">Contato</a>
+  </nav>
+</header>
+
+
+
+  <!-- Hero / Banner -->
+  <section class="hero">
+    <h2>Calçados que acompanham a sua jornada</h2>
+    <p>Estilo, conforto e confiança em cada passo com a <strong>Éconis.</strong></p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSe_UVYT5FH_xswIDWG1EtSLpTLHTA9x7ztUv8zu7j30eaLhRQ/viewform" target="_blank" class="btn">Fazer cadastro!</a>
+    <p class="scroll-indicator"><strong>⬇</strong></p>
+  </section>
+ <!-- Botão Voltar ao Topo -->
+<button id="btnTop" title="Voltar ao topo">
+  <i class="fa fa-arrow-up"></i>
+</button>
+<!--slide / youtube-econis-->
+<section class="meio">
+  <div class="image-box">
+    <a href="https://www.youtube.com/watch?v=C25Ahi131m4" target="_blank" class="play-overlay">
+      <img src="Captura de tela 2025-09-02 213310.png" alt="econis-youtube">
+      <span class="play-button">&#9658;</span>
+    </a>
+  </div>
+  <div class="infor">
+    <h1>Venha nós conhecer!</h1>
+    <h2>
+      A éconis é uma marca de calçados que
+      une conforto, estilo e sustentabilidade.
+      Sempre trazendo o melhor para os
+      nossos clientes de todo Brasil.
+    </h2>
+  </div>
+</section>
+
+<section class="sobre" id="sobre">
+  <div class="texto">
+    <h2>
+      O que é a <span class="verde">Éconis</span>?
+    </h2>
+    <p>
+      A <span class="verde">Éconis</span> é uma marca apaixonada por 
+      <span class="negrito">estilo</span>, 
+      <span class="verde">conforto</span> e 
+      <span class="negrito">praticidade</span>.  
+      Com lojas físicas espalhadas por diversos estados do Nordeste, oferecemos 
+      <span class="verde">calçados</span>, 
+      <span class="verde">acessórios</span> e 
+      <span class="verde">perfumaria</span> pensados para quem quer andar com atitude.  
+      Nossas coleções, como a <span class="negrito">Primavera-Verão 2025</span>, 
+      combinam moda contemporânea com <span class="verde">exclusividade</span>.  
+      Em nossas lojas, você ainda conta com o <span class="negrito verde">Crediéconis</span>, 
+      facilitando seu acesso aos produtos.  
+    </p>
+    <p class="slogan">
+      Escolha <span class="verde">Éconis</span>: estilo, conforto e facilidade em um só lugar.
+    </p>
+  </div>
+
+  <div class="foto">
+    <img src="logo.jpg" alt="Cliente satisfeito na Éconis">
+  </div>
+</section>
+
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <img src="logo-removebg-preview.png" alt="logo-econis">
+    <h3>Venha ser <span class="verde-2">Éconis</span>!</h3>
+    <p>Conforto, estilo e exclusividade em cada passo.</p>
+    <div class="social-links">
+      <a href="https://www.instagram.com/econis" target="_blank">
+        <i class="fa fa-instagram"></i>
+      </a>
+      <a href="https://api.whatsapp.com/send/?phone=5575988813421&text&type=phone_number&app_absent=0" target="_blank">
+        <i class="fa fa-whatsapp"></i>
+      </a>
+      <a href="https://econis.vagas.solides.com.br/" target="_blank"><i class="fa fa-linkedin"></i></a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 <span class="verde">Éconis</span> - Todos os direitos reservados</p>
+  </div>
+</footer>
+
+
+</body>
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+  });
+</script>
+
+<script>
+  
+  function smoothScrollTo(targetY, duration = 1500) {
+    const startY = window.scrollY;
+    const distanceY = targetY - startY;
+    let startTime = null;
+
+    function animation(currentTime) {
+      if (!startTime) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const progress = Math.min(timeElapsed / duration, 1);
+
+      // Ease in-out
+      const ease = progress < 0.5 
+        ? 2 * progress * progress 
+        : -1 + (4 - 2 * progress) * progress;
+
+      window.scrollTo(0, startY + distanceY * ease);
+
+      if (timeElapsed < duration) {
+        requestAnimationFrame(animation);
+      }
+    }
+
+    requestAnimationFrame(animation);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener("click", function(e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute("href"));
+      if (target) {
+        const targetPosition = target.offsetTop;
+
+        // Espera 1.5 segundos parado antes de descer
+        setTimeout(() => {
+          smoothScrollTo(targetPosition, 2000); // 2000ms = 2s descendo
+        }, 100); // <- tempo de espera antes da animação (1.5s)
+      }
+    });
+  });
+</script>
+<script>
+  const btnTop = document.getElementById("btnTop");
+
+  window.onscroll = function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btnTop.style.display = "block";
+    } else {
+      btnTop.style.display = "none";
+    }
+  };
+
+  btnTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+</html>
